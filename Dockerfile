@@ -16,4 +16,4 @@ curl -L ${HDRH_URL} | tar -C ${HDRH_DIR} --strip-components=1 -xzf - && \
 cd ${HDRH_DIR} && \
 mvn install > /dev/null 2>&1
 
-WORKDIR ${YCSB_DIR}
+ENV PATH="${YCSB_DIR}/bin:${HDRH_DIR}:${PATH}"
